@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html{
+    font-size: 64%;
+}
+
+
+.container-fluid{
+    width: 98%;
+    margin: 0 auto;
+}
+
+.header{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content{
+    width: 98%;
+    margin: 1rem auto;
+}
+
+.footer{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:nth-of-type(odd){
+    background: #eee;
+}
+
+th{
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+td,th{
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.text-align-right{
+    text-align: right;
+}
+
+@media only screen and (max-width:760px) {
+    table,thead, tfoot,tbody,th,td,tr{
+        display: block
+    }
+
+    thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+    tr { border: 1px solid #ccc; }
+
+    td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+    td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+    td:nth-of-type(1):before { content: "Name"; }
+	td:nth-of-type(2):before { content: "Age"; }
+	td:nth-of-type(3):before { content: "Gender"; }
+	td:nth-of-type(4):before { content: "Email"; }
+
+    tfoot{
+        width: 100%;
+    }
+
+    tfoot td:before{
+        display: none;
+    }
+}
